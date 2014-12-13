@@ -30,7 +30,7 @@ public class GetLocationFromGPS extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_get_location_from_gps);
+        setContentView(R.layout.activity_get_location_from_gps_new);
         testViewStatus = (TextView)findViewById(R.id.status);
         textViewLatitude = (TextView)findViewById(R.id.latitude);
         textViewLongitude = (TextView)findViewById(R.id.longitude);

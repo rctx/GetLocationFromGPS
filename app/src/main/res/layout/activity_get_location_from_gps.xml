@@ -5,6 +5,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
+    <TextClock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textClock"
+        android:layout_gravity="right" />
+
     <TextView
         android:id="@+id/status"
         android:layout_width="fill_parent"
@@ -18,10 +24,17 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
 
-    <TextClock
+    <TextView
+        android:id="@+id/debug"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textClock"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="GPS Updating:"
+        android:id="@+id/textView"
         android:layout_gravity="right" />
 
     <ToggleButton
@@ -31,10 +44,5 @@
         android:id="@+id/toggleButton"
         android:layout_gravity="right"
         android:onClick="onToggleClicked"/>
-
-    <TextView
-        android:id="@+id/debug"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
 
 </LinearLayout>
