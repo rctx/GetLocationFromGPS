@@ -22,7 +22,10 @@ import android.widget.ToggleButton;
 
 public class GetLocationFromGPS extends Activity {
 
-    TextView testViewStatus, textViewLatitude, textViewLongitude, textViewDebug;
+    TextView testViewStatus, textViewLatitude, textViewLongitude, textViewDebug, textViewSavedLat, textViewSavedLon, textViewBearing;
+    Location savedLocation;
+    Boolean saveLoc = false;
+    float lastBearing;
 
     LocationManager myLocationManager;
     String PROVIDER = LocationManager.GPS_PROVIDER;
@@ -35,6 +38,9 @@ public class GetLocationFromGPS extends Activity {
         textViewLatitude = (TextView)findViewById(R.id.latitude);
         textViewLongitude = (TextView)findViewById(R.id.longitude);
         textViewDebug = (TextView)findViewById(R.id.debug);
+        textViewSavedLat = (TextView)findViewById(R.id.savedLat);
+        textViewSavedLon = (TextView)findViewById(R.id.savedLon);
+        textViewBearing = (TextView)findViewById(R.id.bearing);
 
         myLocationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 
@@ -70,6 +76,11 @@ public class GetLocationFromGPS extends Activity {
         }
 
     }
+
+    public void saveCurrentLocation(View view){
+        saveLoc = true;
+    }
+
     public void onToggleClicked(View view) {
         // Is the toggle on?
         boolean on = ((ToggleButton) view).isChecked();
@@ -95,6 +106,17 @@ public class GetLocationFromGPS extends Activity {
         @Override
         public void onLocationChanged(Location location) {
             showMyLocation(location);
+            if(saveLoc == true){
+                savedLocation = location;
+                textViewSavedLat.setText("Latitude: " + location.getLatitude());
+                textViewSavedLon.setText("Longitude: " + location.getLongitude());
+                saveLoc = false;
+            }
+            if(savedLocation != null){
+                lastBearing = location.bearingTo(savedLocation);
+                textViewBearing.setText("Bearing: " + lastBearing);
+
+            }
         }
 
         @Override
@@ -114,4 +136,5 @@ public class GetLocationFromGPS extends Activity {
             // TODO Auto-generated method stub
 
         }};
+
 }

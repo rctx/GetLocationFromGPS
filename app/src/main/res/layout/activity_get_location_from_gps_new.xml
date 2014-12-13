@@ -105,7 +105,75 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/debug"
-            android:layout_row="12"
+            android:layout_row="0"
+            android:layout_column="2" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save Location:"
+            android:id="@+id/button"
+            android:layout_row="13"
+            android:layout_column="0"
+            android:onClick="saveCurrentLocation"/>
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_row="11"
             android:layout_column="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Saved:"
+            android:id="@+id/textView4"
+            android:layout_row="15"
+            android:layout_column="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/savedLat"
+            android:layout_row="16"
+            android:layout_column="0"
+            android:text="saved lat" />
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_row="17"
+            android:layout_column="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/savedLon"
+            android:layout_row="18"
+            android:layout_column="0"
+            android:text="saved lon" />
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_row="19"
+            android:layout_column="0" />
+
+        <Space
+            android:layout_width="20px"
+            android:layout_height="20px"
+            android:layout_row="21"
+            android:layout_column="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Bearing"
+            android:id="@+id/bearing"
+            android:layout_row="13"
+            android:layout_column="3" />
+
     </GridLayout>
 </LinearLayout>
