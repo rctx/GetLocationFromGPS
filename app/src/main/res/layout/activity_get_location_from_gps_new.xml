@@ -165,6 +165,12 @@
             android:layout_height="20px"
             android:layout_row="21"
             android:layout_column="0" />
+        <ImageView
+            android:id="@+id/pointer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/pointer" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -172,8 +178,8 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Bearing"
             android:id="@+id/bearing"
-            android:layout_row="13"
-            android:layout_column="3" />
+            android:layout_row="22"
+            android:layout_column="0" />
 
     </GridLayout>
 </LinearLayout>
