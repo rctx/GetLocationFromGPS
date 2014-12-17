@@ -24,6 +24,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+
+
+import com.google.android.gms.common.GooglePlayServicesUtil;
 //import com.example.ryan.getlocationfromgps.R;
 //import android.R;
 
@@ -46,6 +49,7 @@ public class GetLocationFromGPS extends Activity implements SensorEventListener 
     private float[] mOrientation = new float[3];
     private float mCurrentDegree = 0f;
     private ImageView mPointer;
+    int googlePlayServicesAvaliable;
 
     LocationManager myLocationManager;
     String PROVIDER = LocationManager.GPS_PROVIDER;
@@ -85,6 +89,9 @@ public class GetLocationFromGPS extends Activity implements SensorEventListener 
     @Override
     protected void onResume() {
         // TODO Auto-generated method stub
+
+        googlePlayServicesAvaliable = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
+
         super.onResume();
         myLocationManager.requestLocationUpdates(
                 PROVIDER,     //provider
@@ -158,7 +165,7 @@ public class GetLocationFromGPS extends Activity implements SensorEventListener 
                 azimuthInDegress -= geoField.getDeclination();
             }
 
-            azimuthInDegress = lastBearing + azimuthInDegress;
+            azimuthInDegress = lastBearing +  azimuthInDegress;
             // If the direction is smaller than 0, add 360 to get the rotation clockwise.
             if (azimuthInDegress < 0) {
                 azimuthInDegress = azimuthInDegress + 360;
